@@ -1,5 +1,18 @@
 //You can edit ALL of the code here
+const allEpisodes = getAllEpisodes();
 const rootElem = document.querySelector("#root");
+const head = document.createElement("div3");
+rootElem.appendChild(head);
+
+const episodeSearch = document.createElement("input");
+episodeSearch.placeholder = "Episode search..";
+let searchValue = "";
+episodeSearch.addEventListener("keyup", episodeSearching);
+head.appendChild(episodeSearch);
+
+const displaySearchedEpisodes = document.createElement("p2");
+displaySearchedEpisodes.innerHTML = `Displaying ${allEpisodes.length}/${allEpisodes.length} episodes`
+head.appendChild(displaySearchedEpisodes);
 
 const allEpisodesContainer = document.createElement("div1");
 rootElem.appendChild(allEpisodesContainer);
@@ -7,6 +20,18 @@ rootElem.appendChild(allEpisodesContainer);
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
+}
+
+function episodeSearching() {
+  const allEpisodes = getAllEpisodes();
+  searchValue = event.target.value.toLowerCase();
+  allEpisodesContainer.innerHTML = "";
+
+  let searchedEpisodes = allEpisodes.filter((episode) => {
+    return `${episode.name} - S0${episode.season}E0${episode.number}${episode.summary}`.toLowerCase().includes(searchValue);
+  });
+  makePageForEpisodes(searchedEpisodes);
+  displaySearchedEpisodes.innerHTML = `Displaying ${searchedEpisodes.length}/${allEpisodes.length} episodes`;
 }
 
 function makePageForEpisodes(episodeList) {
