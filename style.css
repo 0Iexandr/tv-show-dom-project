@@ -1,3 +1,66 @@
 #root {
-  color: red;
+  margin-top: 1.5rem;
+}
+
+div1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 4rem;
+  row-gap: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+div2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 1rem;
+  padding-bottom: 2rem;
+  cursor: pointer;
+  box-shadow: 10px 10px 35px -5px rgba(0,0,0,0.45);
+}
+
+h1 {
+  border: 1px solid rgb(12, 12, 12);
+  border-radius: 1rem;
+  padding: 2rem;
+  font-size: 28px;
+  text-align: center;
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+p1 {
+  font-size: 20px;
+  color: rgb(96, 96, 96);
+  line-height: 2rem;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+img {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+hr {
+  width: 95%;
+  margin-bottom: 1rem;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(96, 96, 96);
+  padding-bottom: 1.5rem;
 }
