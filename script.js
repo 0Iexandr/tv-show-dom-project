@@ -1,5 +1,12 @@
 //You can edit ALL of the code here
-const allEpisodes = getAllEpisodes();
+let allEpisodes = [];
+fetch("https://api.tvmaze.com/shows/82/episodes")
+.then(response => response.json())
+.then(data => {
+  allEpisodes = data;
+  displaySearchedEpisodes.innerText = `Displaying ${allEpisodes.length}/${allEpisodes.length} episodes`;
+});
+
 const rootElem = document.querySelector("#root");
 const head = document.createElement("div3");
 const episodeSelector = document.createElement("select");
@@ -12,7 +19,6 @@ const allEpisodesContainer = document.createElement("div1");
 allEpisodesOption.innerText = "All episodes";
 allEpisodesOption.value = "All episodes";
 episodeSearch.placeholder = "Episode search..";
-displaySearchedEpisodes.innerText = `Displaying ${allEpisodes.length}/${allEpisodes.length} episodes`;
 
 episodeSearch.addEventListener("keyup", episodeSearching);
 episodeSelector.addEventListener("change", episodeSelecting)
