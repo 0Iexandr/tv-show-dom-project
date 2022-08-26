@@ -6,11 +6,11 @@ div3 {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+  margin-left: 4rem;
 }
 
 select {
   color: rgb(50, 50, 50);
-  margin-left: 4rem;
   font-size: 16px;
   padding: 0.5rem;
 }
